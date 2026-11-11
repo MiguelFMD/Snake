@@ -7,4 +7,11 @@ public class SnakeVisual : MonoBehaviour
     {
         snake = new Snake();
     }
+
+    public void Eat()
+    {
+        snake.Eat();
+        print(snake.SnakeLength());
+    }
+
 }
