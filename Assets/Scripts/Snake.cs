@@ -23,7 +23,7 @@ public class Snake
         length++;
     }
 
-    public void Move(float posX, float posY)
+    public void MoveHead(float posX, float posY)
     {
         if(Head != null) Head.Move(posX, posY);
     }

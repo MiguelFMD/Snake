@@ -5,10 +5,10 @@ public class SnakeNodeVisual : MonoBehaviour
 {
     public SnakeNode snakeNode; //Referencia a nuestra logica del nodo
     private SnakeNodeVisual nextVisualNode; 
-    
-    public void MoveNode(Vector2 newPosition)
+
+    public void MoveVisualNode()
     {
-        transform.position = newPosition;
-        snakeNode.Move(transform.position.x, transform.position.y);
+        transform.position = new Vector2(snakeNode.PosX, snakeNode.PosY);
+        if(nextVisualNode != null) nextVisualNode.MoveVisualNode();
     }
 }

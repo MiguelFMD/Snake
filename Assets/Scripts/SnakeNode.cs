@@ -2,8 +2,8 @@
 public class SnakeNode
 {
     private SnakeNode Next; //la siguiente parte de la serpiente
-    private float PosX; //posicion actual del nodo
-    private float PosY;
+    public float PosX {get; private set;} //posicion actual del nodo
+    public float PosY {get; private set;}
     public float LastPosX {get; private set;} //guardaremos la ultima posicion para añadir nodos a la cola al final
     public float LastPosY {get; private set;}
     public SnakeNode(SnakeNode next, float posX, float posY)
