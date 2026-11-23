@@ -29,7 +29,7 @@ public class SnakeNodePool : MonoBehaviour
         {
             GameObject snakeNodeInstance = Instantiate(snakeNodePrefab);
             SnakeNodeVisual newSnakeNode = snakeNodeInstance.GetComponent<SnakeNodeVisual>();
-            return snakeNodePool.Dequeue(); //Quitamos y devolvemos el primer nodo
+            return newSnakeNode;
         }
     }
 
