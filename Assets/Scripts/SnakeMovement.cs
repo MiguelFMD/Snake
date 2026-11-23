@@ -8,12 +8,12 @@ public class SnakeMovement : MonoBehaviour
     [Header("La distancia minima para comer")]
     [SerializeField] private float minDistance = 0.1f;
     private PlayerInput playerInput;
-    private SnakeVisual snake;
+    private SnakeVisual snake; //<---Nuestro sistema de movimiento y de lógica de la serpiente están acoplados, esto a la larga conviene cambiarlo
 
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        snake = GetComponent<SnakeVisual>(); //<---Nuestro sistema de movimiento y de lógica están acoplados, esto a la larga conviene cambiarlo
+        snake = GetComponent<SnakeVisual>(); 
     }
 
     private void OnEnable()
@@ -45,6 +45,9 @@ public class SnakeMovement : MonoBehaviour
         
         // Mover exactamente 1 unidad
         transform.position += step;
+
+
+        //Vemos si estamos encima de la comida
         if(Vector2.Distance(transform.position, food.position) <= minDistance)
         {
             snake.Eat(); //<---Nos comemos la comida
