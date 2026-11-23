@@ -23,6 +23,7 @@ public class SnakeNodePool : MonoBehaviour
         {
             SnakeNodeVisual newSnakeNode = snakeNodePool.Dequeue();
             newSnakeNode.gameObject.SetActive(true);
+            newSnakeNode.transform.SetParent(null);
             return newSnakeNode;
         }
         else

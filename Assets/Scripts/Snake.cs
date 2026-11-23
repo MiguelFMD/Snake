@@ -1,26 +1,31 @@
 
+
 public class Snake
 {
     //Nuestros datos privados
     private SnakeNode Head;
-    private SnakeNode Tail;
+    public SnakeNode Tail {get; private set;}
     private int length;
 
-    public Snake() //constructor para CREAR una serpiente
+    public Snake(float posX, float posY) //constructor para CREAR una serpiente
     {
-        SnakeNode newHead = new SnakeNode();
+        SnakeNode newHead = new SnakeNode(null, posX, posY);
         Head = newHead;
         Tail = newHead;
         length = 1;
     }
 
-    public void Eat() //equivale a añadir
+    public void Eat(SnakeNode newNode) //equivale a añadir
     {
-        SnakeNode newNode = new SnakeNode();
         //Cuidado con NO asignar Tail antes de asignar el siguiente
-        Tail.Next = newNode;
+        Tail.SetNext(newNode);
         Tail = newNode;
         length++;
+    }
+
+    public void Move(float posX, float posY)
+    {
+        if(Head != null) Head.Move(posX, posY);
     }
 
     public int SnakeLength()

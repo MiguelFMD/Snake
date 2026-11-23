@@ -1,16 +1,14 @@
 using UnityEngine;
 
+//Esta clase se encargará de la parte visual del mundo para cada nodo
 public class SnakeNodeVisual : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public SnakeNode snakeNode; //Referencia a nuestra logica del nodo
+    private SnakeNodeVisual nextVisualNode; 
+    
+    public void MoveNode(Vector2 newPosition)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.position = newPosition;
+        snakeNode.Move(transform.position.x, transform.position.y);
     }
 }

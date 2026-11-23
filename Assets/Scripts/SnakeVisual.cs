@@ -7,13 +7,20 @@ public class SnakeVisual : MonoBehaviour
 
     void Start()
     {
-        snake = new Snake();
+        snake = new Snake(transform.position.x, transform.position.y);
     }
 
     public void Eat()
     {
-        snake.Eat();
-        snakeNodePool.RequestNode().transform.SetParent(this.transform);
+        SnakeNodeVisual newSnakeNodeVisual = snakeNodePool.RequestNode();
+        SnakeNode newSnakeNode = new SnakeNode(null, snake.Tail.LastPosX, snake.Tail.LastPosY); //Asignamos la posicion inicial para el nodo
+        newSnakeNodeVisual.snakeNode = newSnakeNode;
+        snake.Eat(newSnakeNodeVisual.snakeNode);
+    }
+
+    public void Move()
+    {
+        
     }
 
 }

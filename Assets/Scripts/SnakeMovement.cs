@@ -46,7 +46,9 @@ public class SnakeMovement : MonoBehaviour
         // Mover exactamente 1 unidad
         transform.position += step;
 
-
+        //Movemos la cabeza
+        snake.Move();
+        
         //Vemos si estamos encima de la comida
         if(Vector2.Distance(transform.position, food.position) <= minDistance)
         {
