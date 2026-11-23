@@ -18,6 +18,7 @@ public class SnakeVisual : MonoBehaviour
     public void Eat()
     {
         SnakeNodeVisual newSnakeNodeVisual = snakeNodePool.RequestNode();
+        if(newSnakeNodeVisual == null) return;  //Si no hay nodos disponibles, no hacemos nada
         SnakeNode newSnakeNode = new SnakeNode(null, snake.Tail.LastPosX, snake.Tail.LastPosY); //Asignamos la posicion inicial para el nodo
         newSnakeNodeVisual.snakeNode = newSnakeNode;
         newSnakeNodeVisual.MoveVisualNode();

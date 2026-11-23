@@ -21,7 +21,7 @@ public class SnakeNodePool : MonoBehaviour
     {
         if(snakeNodePool.Count > 0) //Si hay nodos disponibles lo sacamos
         {
-            SnakeNodeVisual newSnakeNode = snakeNodePool.Dequeue();
+            SnakeNodeVisual newSnakeNode = snakeNodePool.Dequeue(); //Sacamos el primero disponible de la cola
             newSnakeNode.gameObject.SetActive(true);
             newSnakeNode.transform.SetParent(null);
             return newSnakeNode;
@@ -34,7 +34,7 @@ public class SnakeNodePool : MonoBehaviour
         }
     }
 
-    public void ReturnNode(SnakeNodeVisual snakeNodeToReturn)
+    public void ReturnNode(SnakeNodeVisual snakeNodeToReturn) //Equivalente a encolar para nuestra pool
     {
         snakeNodeToReturn.gameObject.SetActive(false);
         snakeNodePool.Enqueue(snakeNodeToReturn);
