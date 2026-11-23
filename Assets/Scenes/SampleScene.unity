@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 185462030}
   - component: {fileID: 185462033}
   - component: {fileID: 185462034}
+  - component: {fileID: 185462035}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Untagged
@@ -274,6 +275,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SnakeMovement
   food: {fileID: 250671510}
   minDistance: 1
+--- !u!114 &185462035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185462029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ff62a8d76602d429f9f7f9802d3774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SnakeNodeVisual
 --- !u!1 &250671508
 GameObject:
   m_ObjectHideFlags: 0

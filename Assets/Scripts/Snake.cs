@@ -3,7 +3,7 @@
 public class Snake
 {
     //Nuestros datos privados
-    private SnakeNode Head;
+    public SnakeNode Head {get; private set;}
     public SnakeNode Tail {get; private set;}
     private int length;
 

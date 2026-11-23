@@ -4,7 +4,7 @@ using UnityEngine;
 public class SnakeNodeVisual : MonoBehaviour
 {
     public SnakeNode snakeNode; //Referencia a nuestra logica del nodo
-    private SnakeNodeVisual nextVisualNode; 
+    public SnakeNodeVisual nextVisualNode; 
 
     public void MoveVisualNode()
     {
